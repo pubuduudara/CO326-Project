@@ -69,11 +69,11 @@ void loop() {
   }
   client.loop();
   get_count();
-  //Serial.println(vehicle_count[0],vehicle_count[1]);
+
   publish_to_broker(0, 0, vehicle_count[0]);
-  publish_to_broker(0, 1, vehicle_count[1]);
- 
+  publish_to_broker(0, 1, vehicle_count[2]);
   Serial.println("Published");
+  Serial.printf("lane_0 = %d, lane_1 = %d\n", vehicle_count[0], vehicle_count[2]);
 
 
 }
