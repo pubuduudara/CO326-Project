@@ -3,12 +3,13 @@
 #include <PubSubClient.h>
 #include "functions.h"
 
-//char* ssid = "Night King";
-//char* password = "121212qq";
+char* ssid = "Dialog 4G wish";
+char* password = "wishez1234";
+const char* mqtt_server = "192.168.1.100";
 
-char* ssid = "Eng-Student";
-char* password = "3nG5tuDt";
-const char* mqtt_server = "10.30.15.0";
+//char* ssid = "Eng-Student";
+//char* password = "3nG5tuDt";
+//const char* mqtt_server = "10.30.15.0";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -71,10 +72,11 @@ void loop() {
   get_count();
 
   publish_to_broker(0, 0, vehicle_count[0]);
-  publish_to_broker(0, 1, vehicle_count[2]);
+  publish_to_broker(0
+  , 1, vehicle_count[2]);
   Serial.println("Published");
   Serial.printf("lane_0 = %d, lane_1 = %d\n", vehicle_count[0], vehicle_count[2]);
-
+  //delay(10);
 
 }
 
