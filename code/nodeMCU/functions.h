@@ -1,4 +1,4 @@
-int vehicle_count[2];
+int vehicle_count[]={0,0};
 int reedPins[] = {16, 5, 4, 0, 2, 14};
 int prev_reading[4];
 void pin_setup() {
