@@ -1,5 +1,5 @@
 
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <PubSubClient.h>
 #include "functions.h"
 
@@ -11,9 +11,8 @@ const char* mqtt_server = "192.168.1.2";
 //char* password = "3nG5tuDt";
 //const char* mqtt_server = "10.30.15.0";
 
-#define current_road 0
-char* esp_clinet = "ESP8266Client_0";
-
+#define current_road 2
+char* esp_clinet = "ESP8266Client_2";
 byte willQoS = 0;
 const char* willTopic = "willTopic";
 const char* willMessage = "offline";
@@ -45,7 +44,7 @@ void setup_wifi() {
 
 void reconnect() {
   // Loop until we're reconnected
-  //while (!client.connected()) {
+  // while (!client.connected()) {
   Serial.print("Attempting MQTT connection...");
   // Attempt to connect
   if (client.connect(esp_clinet, willTopic, willQoS, willRetain, willMessage)) {
@@ -62,6 +61,7 @@ void reconnect() {
   }
   //}
 }
+
 
 
 void setup() {
@@ -106,7 +106,7 @@ void publish_to_broker(int road_number, int lane_number, int count) {
 
   String(count).toCharArray(c, 20);
   client.publish(msg, c);
-  //delay(100);
+//  delay(100);
 }
 
 void make_non_zero_0(int road, int count ) {
