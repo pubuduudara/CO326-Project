@@ -11,8 +11,8 @@ const char* mqtt_server = "192.168.1.2";
 //char* password = "3nG5tuDt";
 //const char* mqtt_server = "10.30.15.0";
 
-#define current_road 0
-char* esp_clinet = "ESP8266Client_0";
+#define current_road 1
+char* esp_clinet = "ESP8266Client_1";
 
 byte willQoS = 0;
 const char* willTopic = "willTopic";

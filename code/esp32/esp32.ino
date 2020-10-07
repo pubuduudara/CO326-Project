@@ -92,11 +92,11 @@ void loop() {
     prev_lane_0 = vehicle_count[0];
     make_non_zero_0(current_road, prev_lane_0); //change new
   }
-
-  if (vehicle_count[2] != prev_lane_1) {
-    prev_lane_1 = vehicle_count[2];
-    make_non_zero_1(current_road, prev_lane_1); //change new
-  }
+//
+//  if (vehicle_count[2] != prev_lane_1) {
+//    prev_lane_1 = vehicle_count[2];
+//    make_non_zero_1(current_road, prev_lane_1); //change new
+//  }
 }
 
 void publish_to_broker(int road_number, int lane_number, int count) {
